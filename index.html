@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js">
+	// Choose your favorite version of Modernizr, or substitute a local source.
+	</script>
+	<style>
+		body { font-family: Helvetica, Tahoma, sans-serif; }
+		form, div { margin: 1em; }
+	</style>
+</head>
+<body>
+         	<form id="myFrm" name="myFrm">
+          		<select id="sel_au" name="sel_au" size="3">
+          			<option data-mp3src="_bin/unforgettable.mp3" data-oggsrc="_bin/unforgettable.ogg" value="Unforgettable">Unforgettable</option>
+          			<option data-mp3src="_bin/at_last.mp3" data-oggsrc="_bin/at_last.ogg" value="At Last">At Last</option>
+          			<option data-mp3src="_bin/sunshineofmylife.mp3" data-oggsrc="_bin/sunshineofmylife.ogg" value="You Are The Sunshine Of My Life">You Are The Sunshine Of My Life</option>
+          			<option data-mp3src="_bin/astimegoesby.mp3" data-oggsrc="_bin/astimegoesby.ogg" value="As Time Goes By">As Time Goes By</option>
+          			<option data-mp3src="_bin/canteloupeisland.mp3" data-oggsrc="_bin/canteloupeisland.ogg" value="Cantaloupe Island">Cantaloupe Island</option>
+          			<option data-mp3src="_bin/Bethlehem.mp3" data-oggsrc="_bin/Bethlehem.ogg" value="O Little Town Of Bethlehem">O Little Town Of Bethlehem</option>
+          			<option data-mp3src="_bin/silentnite.mp3" data-oggsrc="_bin/silentnite.ogg" value="Silent Night">Silent Night</option>
+          			<option data-mp3src="_bin/letitsnow.mp3" data-oggsrc="_bin/letitsnow.ogg" value="Let It Snow!">Let It Snow!</option>
+          		</select>
+            </form>
+            <div id="myAudioContainer">
+            	<audio id="myPlayr" autoplay controls>
+            		<div id="msgNoAudio"></div>
+            		<div id="fallback"></div>
+            	</audio>
+            </div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" >
+	// Choose your favorite version of jQuery, or substitute a local source.
+	</script>
+	<script src="media-chooser.js"></script>
+	<script>
+	$(document).ready(function() {
+		noAudio($('#sel_au'));
+	$('#sel_au').on('click', function() {
+		playSel(selSrc($(this)));
+		});
+	});
+	</script>
+</body>
+</html>
